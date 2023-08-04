@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // 追加ステータスタイプ
@@ -29,7 +30,7 @@ public enum StatsType
     SpawnTimerMax,
 }
 // 追加データ・タイプ
-[SerializeField]
+[Serializable]
 public class BonusStats
 {
     // 追加タイプ
@@ -77,9 +78,11 @@ public class BaseStats
     public float AliveTime;
 
     // StatsTypeとの紐づけ　インデクサを利用する
-
+    // thisを入力して呼び出す
     public float this[StatsType key]
     {
+
+        // プロパティ　変数と関数　中間的なもの
         get
         {
             if (key == StatsType.Attack) return Attack;
@@ -129,9 +132,12 @@ public class BaseStats
 
     protected void addBonus(BonusStats bonus)
     {
+
+        // キーが入力されたら、値を返すよ
         float value = applyBonus(this[bonus.Key], bonus.Value, bonus.Type);
 
         // 最大値があるもの
+        // 例：最小０、最大MaxHP
         if (StatsType.HP == bonus.Key)
         {
             value = Mathf.Clamp(value, 0, MaxHP);

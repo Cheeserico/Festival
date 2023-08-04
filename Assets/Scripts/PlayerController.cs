@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameSceneDirector sceneDirector;
     [SerializeField] Slider sliderHP;
+    [SerializeField] Slider sliderXP;
+
+    public CharacterStats Stats;
+
+    // 攻撃のクールダウン
+    float attackCoolDownTimer;
+    float attackCoolDownTimerMax = 0.5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        updateTimer();
         movePlayer();
         moveCamera();
         moveSliderHP();
@@ -111,6 +120,9 @@ public class PlayerController : MonoBehaviour
     }
 
     // カメラ移動
+
+    // カメラはWorldStar,Endだとフィールドの一番端の位置になってしまうと、位置があわない。
+    // TileMapの左下のMapの座標、右上の座標を取得して、そこからもっと左にはみでたりしないように制御している（ポジションを戻すようにしている）
     void moveCamera()
     {
         Vector3 pos = transform.position;
@@ -126,7 +138,7 @@ public class PlayerController : MonoBehaviour
         {
             pos.y = sceneDirector.TileMapStart.y;
         }
-
+        // 終点
         if (sceneDirector.TileMapEnd.x < pos.x)
         {
             pos.x = sceneDirector.TileMapEnd.x;
@@ -151,6 +163,84 @@ public class PlayerController : MonoBehaviour
         sliderHP.transform.position = pos;
 
     }
+    // ダメージを受けたらGameSceneDirectorのダメージ関数を呼び出す処理
+    // ダメージ
+    public void Damage(float attack)
+    {
+
+        //非アクティブなら抜ける
+        if (!enabled) return;
+        //　最大値
+        float damage = Mathf.Max(0, attack - Stats.Defense);
+
+        Stats.HP -= damage;
+
+        // ダメージ表示
+        sceneDirector.DispDamege(gameObject, damage);
+
+        //TODO ゲームオーバー
+        if(0>Stats.HP)
+        {
+
+        }
+
+        if (0 > Stats.HP) Stats.HP = 0;
+        setSloderHP();
+    }
+
+    // HPスライダーの値を更新
+    void setSloderHP()
+    {
+        sliderHP.maxValue = Stats.MaxHP;
+        sliderHP.value = Stats.HP;
+
+    }
+
+    void setSloderXP()
+    {
+        sliderXP.maxValue = Stats.MaxXP;
+        sliderXP.value = Stats.XP;
+
+    }
+
+    void OnCollitionEnter2D(Collision2D collition)
+    {
+        attackEnemy(collition);
+    }
+    // 衝突している間
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        attackEnemy(collision);
+
+    }
+    // 衝突が終わったとき
+    void OnCollitionExit2D(Collision2D collision)
+    {
+
+    }
+
+    // プレイヤーへ攻撃する
+    void attackEnemy(Collision2D collision)
+    {
+        // エネミー以外
+        if (!collision.gameObject.TryGetComponent<EnemyController>(out var enemy)) return;
+        //　タイマー未消化
+        if (0 < attackCoolDownTimer) return;
+
+        enemy.Damage(Stats.Attack);
+        attackCoolDownTimer = attackCoolDownTimerMax;
+    }
+
+    // 各種タイマー設定
+
+    void updateTimer()
+    {
+        if (0 < attackCoolDownTimer)
+        {
+            attackCoolDownTimer -= Time.deltaTime;
+        }
+    }
+
 
 
 

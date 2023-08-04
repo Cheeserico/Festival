@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameSceneDirector : MonoBehaviour
 {
@@ -17,14 +18,33 @@ public class GameSceneDirector : MonoBehaviour
     public Vector2 WorldEnd;
 
 
+    // EnemyContllerで呼び出せすため
+    // GameSceneDirectorを介してプレイヤーのオブジェクトにアクセスできるようにする
+
+
+    public PlayerController Player;
+    
+    [SerializeField] Transform parentTextDamage;
+    [SerializeField] GameObject prefabTextDamage;
+
+    // タイマー
+    [SerializeField] Text textTimer;
+    public float GameTimer;
+    public float OldSeconds;
+
+
     private void Start()
     {
+        // 初期設定
+        OldSeconds = -1;
+
+
         //　カメラの移動できる範囲
 
         foreach (Transform item in grid.GetComponentInChildren<Transform>())
         {
-
-            // 開始位置
+            // 子供のポジションを割り出して、
+            // 開始位置（一番左上端の位置を割り出す）
             if (TileMapStart.x > item.position.x)
             {
                 TileMapStart.x = item.position.x;
@@ -35,7 +55,7 @@ public class GameSceneDirector : MonoBehaviour
                 TileMapStart.y = item.position.y;
             }
 
-            // 終了位置
+            // 終了位置（一番右上端の位置を割り出す）
             if (TileMapEnd.x < item.position.x)
             {
                 TileMapEnd.x = item.position.x;
@@ -52,7 +72,8 @@ public class GameSceneDirector : MonoBehaviour
             // 画面縦横比（16：9想定） 
             float aspect = (float)Screen.width / (float)Screen.height;
 
-            // プレイヤーの移動できる範囲
+            // プレイヤーの移動できる範囲（アスペクト比率とカメラのサイズを取得して、WorldStart：左下端　WorldEnd：右上端を取得する）
+            // 
             WorldStart = new Vector2(TileMapStart.x - cameraSize * aspect, TileMapStart.y - cameraSize);
             WorldEnd = new Vector2(TileMapEnd.x + cameraSize * aspect, TileMapEnd.y + cameraSize);
 
@@ -61,5 +82,33 @@ public class GameSceneDirector : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        // ゲームタイマー更新
+        UpdateGameTimer();
+    }
 
+    // プレハブからTextDamageControllerで作ったコントローラの関数を呼び出す
+    // ダメージ表示
+    public void DispDamege(GameObject target, float damege)
+    {
+        GameObject obj = Instantiate(prefabTextDamage, parentTextDamage);
+        obj.GetComponent<TextDamageController>().Init(target, damege);
+    }
+
+    //　ゲームタイマー
+    void UpdateGameTimer()
+    {
+        GameTimer += Time.deltaTime;
+
+        // 前回と秒数が同じなら処理をしない
+        int seconds = (int)GameTimer % 60;
+        if (seconds == OldSeconds) return;
+
+        textTimer.text = Units.GetTextTimer(GameTimer);
+        OldSeconds = seconds;
+
+
+
+    }
 }
