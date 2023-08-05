@@ -9,13 +9,18 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
     Animator animator;
-    float moveSpeed = 10;
+    /// <summary>
+    
+    /// </summary>
+    
+    ////////////////////////////////////////コメントアウトした
+    // float moveSpeed = 10;
 
-    // あとでIntitへ移動
-
-    [SerializeField] GameSceneDirector sceneDirector;
-    [SerializeField] Slider sliderHP;
-    [SerializeField] Slider sliderXP;
+    // あとでIntitでセットされる
+    ////////////////////////////////////////////３つともシリアライザブルを消した
+    GameSceneDirector sceneDirector;
+    Slider sliderHP;
+    Slider sliderXP;
 
     public CharacterStats Stats;
 
@@ -24,11 +29,22 @@ public class PlayerController : MonoBehaviour
     float attackCoolDownTimerMax = 0.5f;
 
 
+    // 必要XP
+    List<int> levelRequiements;
+    // 敵生成装置
+    EnemySpawnerController enemySpawner;
+    // 向き
+    public Vector2 Forward;
+    // レベルテキスト
+    Text TextLv;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        ////////////////////////////////////////////ふたつとも消す
+        // rigidbody2d = GetComponent<Rigidbody2D>();
+        // animator = GetComponent<Animator>();
 
     }
 
@@ -39,9 +55,69 @@ public class PlayerController : MonoBehaviour
         movePlayer();
         moveCamera();
         moveSliderHP();
-
     }
 
+    ///
+    // 初期化
+    ////////////////////////////////////////////////////////////////新しく関数作った
+    // プレイヤーが使うデーターだけを取得するように引数を取得する
+    public void Init(GameSceneDirector sceneDirector,EnemySpawnerController enemySpawner,CharacterStats characterStats,Text textLv,Slider sliderHP,Slider sliderXP)
+    {
+        // 変数初期化
+
+        levelRequiements = new List<int>();
+
+        this.sceneDirector = sceneDirector;
+        this.enemySpawner = enemySpawner;
+        this.Stats = characterStats;
+        this.TextLv = textLv;
+        this.sliderHP = sliderHP;
+        this.sliderXP = sliderXP;
+
+        // プレイヤーの向き 
+        Forward = Vector2.right;
+
+        // 経験値の閾値リスト作成
+        levelRequiements.Add(0);
+        for(int i = 1; 1< 1000; i++)
+        {
+            // 一つ前の閾値
+            int prevxp = levelRequiements[i - 1];
+            // 41以降はレベル毎に16ずつ
+            int addxp = 16;
+
+            // レベル
+            if(i==1)
+            {
+                addxp = 5;
+            }
+            else if(20 >= i)
+            {
+                addxp = 10;
+            }
+            else if(40 >= i)
+            {
+                addxp = 13;
+            }
+
+            levelRequiements.Add(prevxp);
+        }
+
+        // Lv2の必要経験値
+        Stats.MaxXP = levelRequiements[1];
+
+        // UI初期化
+        setTextLv();
+   
+        setSliderHP();
+        
+        setSliderXP();
+        // スライダーの座標
+        moveSliderHP();
+
+        // TODO 武器データセット
+    }
+    
     // プレイヤーの移動に関する処理
 
     void movePlayer()
@@ -76,9 +152,11 @@ public class PlayerController : MonoBehaviour
         // 入力がなければ抜ける
         if (Vector2.zero == dir) return;
 
-
+        ////////////////////////////////////////////////////////////////コメントアウトした所下のコードに変更
         // プレイヤー移動
-        rigidbody2d.position += dir.normalized * moveSpeed * Time.deltaTime;
+        // rigidbody2d.position += dir.normalized * moveSpeed * Time.deltaTime;
+        rigidbody2d.position += dir.normalized * Stats.MoveSpeed * Time.deltaTime;
+
 
         // アニメーションを再生する(アニメータ用意していない）
         //animator.SetTrigger(trigger);
@@ -114,10 +192,6 @@ public class PlayerController : MonoBehaviour
             pos.y = sceneDirector.WorldEnd.y;
             rigidbody2d.position = pos;
         }
-
-
-
-
     }
 
     // カメラ移動
@@ -185,17 +259,17 @@ public class PlayerController : MonoBehaviour
         }
 
         if (0 > Stats.HP) Stats.HP = 0;
-        setSloderHP();
+        setSliderHP();
     }
 
     // HPスライダーの値を更新
-    void setSloderHP()
+    void setSliderHP()
     {
         sliderHP.maxValue = Stats.MaxHP;
         sliderHP.value = Stats.HP;
     }
 
-    void setSloderXP()
+    void setSliderXP()
     {
         sliderXP.maxValue = Stats.MaxXP;
         sliderXP.value = Stats.XP;
@@ -241,4 +315,13 @@ public class PlayerController : MonoBehaviour
             attackCoolDownTimer -= Time.deltaTime;
         }
     }
+    ///////////////////////////////////////////////////// 追加
+    // レベルテキスト更新
+    void setTextLv()
+    {
+        TextLv.text = "LV" + Stats.Lv;
+    }
+
+
+
 }

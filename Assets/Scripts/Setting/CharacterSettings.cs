@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 右クリックメニューに表示する、filenameはデフォルトのファイル名
 [CreateAssetMenu(fileName = "CharacterSettings",menuName = "ScriptableObjects/CharacterSettings")]
@@ -33,7 +34,6 @@ public class CharacterSettings : ScriptableObject
     // リストのIDからデータを検索する
     public CharacterStats Get(int id)
     {
-        Debug.Log("tesu");
 
         return (CharacterStats)datas.Find(item => item.Id == id).GetCopy();
     }
@@ -44,17 +44,29 @@ public class CharacterSettings : ScriptableObject
         // ステータス取得
         CharacterStats stats = instance.Get(id);
         // オブジェクト
-        GameObject obj = Instantiate(stats.prefab, position, Quaternion.identity);
+        GameObject obj = Instantiate(stats.Prefab, position, Quaternion.identity);
         //データセット
         EnemyController ctrl = obj.GetComponent<EnemyController>();
         ctrl.Init(sceneDirector, stats);
 
         return ctrl;
-
-
     }
 
+    // プレイヤー生成
+    public PlayerController CreatePlayer(int id, GameSceneDirector sceneDirector, EnemySpawnerController enemySpawner, Text textLv, Slider sliderHP, Slider sliderXP)
 
+    {
+        // ステータス取得
+        CharacterStats stats = Instance.Get(id);
+        // オブジェクト作成
+        GameObject obj = Instantiate(stats.Prefab, Vector3.zero, Quaternion.identity);
+
+        // データセット
+        PlayerController ctrl = obj.GetComponent<PlayerController>();
+        ctrl.Init(sceneDirector, enemySpawner, stats, textLv, sliderHP, sliderXP);
+
+        return ctrl;
+    }
 }
    
     //　敵の動き
@@ -73,7 +85,7 @@ public class CharacterStats : BaseStats
     
 {
         // キャラクターのプレハブ
-        public GameObject prefab;
+        public GameObject Prefab;
         // 初期装備武器ID
         public List<int> DefaultWeaponIds;
         // 装備可能武器ID

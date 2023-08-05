@@ -43,6 +43,7 @@ public class EnemySpawnerController : MonoBehaviour
     // 当たり判定のあるタイルマップ
     Tilemap tilemapCollider;
     // 現在の参照データ
+
     EnemySpawnData enemySpawnData;
     // 経過時間
     float oldSeconds;
@@ -88,7 +89,6 @@ public class EnemySpawnerController : MonoBehaviour
 
         // 現在のデータ
         if (null == enemySpawnData) return;
-        Debug.Log("111111");
 
         // タイマー消費
         spawnTimer -= Time.deltaTime;
@@ -97,20 +97,16 @@ public class EnemySpawnerController : MonoBehaviour
         {
             ///////////////////
             spawnGroup();
-            Debug.Log("22222222");
 
         }
 
         else if (SpawnType.Normal == enemySpawnData.spawnType)
         {
             spawnNormal();
-            Debug.Log("333333");
 
         }
-        Debug.Log("44444");
 
         spawnTimer = enemySpawnData.SpawnDuration;
-        Debug.Log("555555");
     }
     //通常生成
     void spawnNormal()
@@ -194,11 +190,18 @@ public class EnemySpawnerController : MonoBehaviour
         if (enemySpawnDatas.Count - 1 < idx) return;
         // 設定された経過時間を超えていたらデータを入れ替える
         EnemySpawnData data = enemySpawnDatas[idx];
-        // 次回用の設定
-        spawnDataIndex = idx;
-        spawnTimer = 0;
-        oldSeconds = sceneDirector.OldSeconds;
 
+        int elapsedSeconds = data.ElapsedMinutes * 60 + data.ElapsedSeconds;
+        
+        if(elapsedSeconds < sceneDirector.GameTimer)
+        {
+            enemySpawnData = enemySpawnDatas[idx];
+
+            // 次回用の設定
+            spawnDataIndex = idx;
+            spawnTimer = 0;
+            oldSeconds = sceneDirector.OldSeconds;
+        }
     }
     // すべての敵を返す
     public List<EnemyController> GetEnemies()
