@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe656e191724f14ab54f68ea77969d0, type: 3}
+  m_Name: WeaponSpawnerSettings
+  m_EditorClassIdentifier: 
+  datas:
+  - Title: "\u30B9\u30E9\u30C3\u30B7\u30E5"
+    Id: 0
+    Lv: 1
+    Name: 
+    Description: 
+    Attack: 15
+    Defense: 0
+    HP: -1
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 0
+    PickUpRange: 0
+    AliveTime: 0.5
+    PrefabSpawner: {fileID: 732586464960538030, guid: 0cd70b9d094ee1a4abcc9b33531ad304, type: 3}
+    Icon: {fileID: 21300000, guid: 27d01e3cbedc748cf932a2feda1bd4c2, type: 3}
+    LevelUpItemId: 1
+    SpawnCount: 2
+    SpawnTimerMin: 2
+    SpawnTimerMax: 2

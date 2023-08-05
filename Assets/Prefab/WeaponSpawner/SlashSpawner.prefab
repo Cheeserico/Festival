@@ -44,3 +44,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687b2d13745d1b8418e3bc02e917399e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PrefabWeapon: {fileID: 6382200817969835408, guid: f25156a44205864449a875235d773a45, type: 3}
+  stats:
+    Title: 
+    Id: 0
+    Lv: 0
+    Name: 
+    Description: 
+    Attack: 0
+    Defense: 0
+    HP: 0
+    MaxHP: 0
+    XP: 0
+    MaxXP: 0
+    MoveSpeed: 0
+    PickUpRange: 0
+    AliveTime: 0
+    PrefabSpawner: {fileID: 0}
+    Icon: {fileID: 0}
+    LevelUpItemId: 0
+    SpawnCount: 0
+    SpawnTimerMin: 0
+    SpawnTimerMax: 0
+  TotalDamage: 0
+  TotalTimer: 0
