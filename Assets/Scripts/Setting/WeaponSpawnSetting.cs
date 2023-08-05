@@ -66,7 +66,7 @@ public class WeaponSpawnerSettings : ScriptableObject
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*
+    
     // 作成
     // 武器生成装置を生成する関数
     public BaseWeaponSpawner CreateWeaponSpawner(int id, EnemySpawnerController enemySpawner, Transform parent = null)
@@ -76,14 +76,14 @@ public class WeaponSpawnerSettings : ScriptableObject
         WeaponSpawnerStats stats = instance.Get(id, 1);
         // オブジェクト作成
         ///////////////////////////////////////
-        GameObject obj Instantiate(stats.PrefabSpawner, parent);
+        GameObject obj　= Instantiate(stats.PrefabSpawner, parent);
         // データセット
         BaseWeaponSpawner spawner = obj.GetComponent<BaseWeaponSpawner>();
 
         spawner.Init(enemySpawner, stats);
         return spawner;
     }
-    */
+    
 
 }
 

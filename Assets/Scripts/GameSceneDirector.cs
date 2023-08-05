@@ -113,9 +113,12 @@ public class GameSceneDirector : MonoBehaviour
         GameTimer += Time.deltaTime;
 
         // 前回と秒数が同じなら処理をしない
+        // ％割ったときの余り（60で割った余り）62秒だったら2になる
+        // 小数点だと秒数わかりにくいからInt型
         int seconds = (int)GameTimer % 60;
+        // 前回と秒数が同じならリターン（この関数の処理は１回は終わらせる）
         if (seconds == OldSeconds) return;
-
+        // 前と時間が違ったから表示しよう（時間が進む）
         textTimer.text = Units.GetTextTimer(GameTimer);
         OldSeconds = seconds;
     }

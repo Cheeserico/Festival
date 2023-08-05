@@ -43,8 +43,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         ////////////////////////////////////////////ふたつとも消す
-        // rigidbody2d = GetComponent<Rigidbody2D>();
-        // animator = GetComponent<Animator>();
 
     }
 
@@ -63,6 +61,11 @@ public class PlayerController : MonoBehaviour
     // プレイヤーが使うデーターだけを取得するように引数を取得する
     public void Init(GameSceneDirector sceneDirector,EnemySpawnerController enemySpawner,CharacterStats characterStats,Text textLv,Slider sliderHP,Slider sliderXP)
     {
+
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        //animator = GetComponent<Animator>();
+
+
         // 変数初期化
 
         levelRequiements = new List<int>();
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
         // 経験値の閾値リスト作成
         levelRequiements.Add(0);
-        for(int i = 1; 1< 1000; i++)
+        for (int i = 1; i < 1000; i++) 
         {
             // 一つ前の閾値
             int prevxp = levelRequiements[i - 1];
@@ -297,6 +300,7 @@ public class PlayerController : MonoBehaviour
     void attackEnemy(Collision2D collision)
     {
         // エネミー以外
+        
         if (!collision.gameObject.TryGetComponent<EnemyController>(out var enemy)) return;
         //　タイマー未消化だったら終了
         if (0 < attackCoolDownTimer) return;
