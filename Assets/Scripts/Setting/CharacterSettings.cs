@@ -12,10 +12,8 @@ public class CharacterSettings : ScriptableObject
     // キャラクターデータ
     public List<CharacterStats> datas;
 
-    static CharacterSettings instance;
-
-
     // 外部からアクセスされるためのプロパティ（Getcomponentが要らない）シングルトン
+    static CharacterSettings instance;
     public static CharacterSettings Instance
     {
         get
@@ -27,7 +25,6 @@ public class CharacterSettings : ScriptableObject
                 // Resources.Lodeしたらプロジェクトに存在する「Resourcesという名前のフォルダーの中身」から色々と取得できる
                 instance = Resources.Load<CharacterSettings>(nameof(CharacterSettings));
             }
-
             // 値を返す
             return instance;
         }
@@ -36,6 +33,8 @@ public class CharacterSettings : ScriptableObject
     // リストのIDからデータを検索する
     public CharacterStats Get(int id)
     {
+        Debug.Log("tesu");
+
         return (CharacterStats)datas.Find(item => item.Id == id).GetCopy();
     }
 

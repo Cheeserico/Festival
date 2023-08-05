@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// staticをつけることによりどこからでもアクセスできる
 public static class Units
 {
 

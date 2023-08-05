@@ -36,7 +36,7 @@ public class EnemySpawnerController : MonoBehaviour
     // 敵データ
     [SerializeField] List<EnemySpawnData> enemySpawnDatas;
     // 生成した敵
-    public List<EnemyController> Enemies;
+    List<EnemyController> enemies;
 
     // シーンディレクター
     GameSceneDirector sceneDirector;
@@ -52,8 +52,6 @@ public class EnemySpawnerController : MonoBehaviour
     // 敵の出現位置
     const float SpawnRadius = 13;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -64,12 +62,12 @@ public class EnemySpawnerController : MonoBehaviour
     void Update()
     {
         // 敵生成データ更新
-        
-        /////////////////////////////////////////////////////////
-        //updateEnemySpawnData();
+          ////////////////////     
+         updateEnemySpawnData();
 
         // 生成
         spawnEnemy();
+
     }
 
     // 初期化
@@ -79,7 +77,7 @@ public class EnemySpawnerController : MonoBehaviour
         this.tilemapCollider = tilemapCollider;
 
         // 生成した敵を保存
-        Enemies = new List<EnemyController>();
+        enemies = new List<EnemyController>();
         spawnDataIndex = -1;
 
     }
@@ -87,22 +85,32 @@ public class EnemySpawnerController : MonoBehaviour
     // 敵生成
     void spawnEnemy()
     {
+
         // 現在のデータ
         if (null == enemySpawnData) return;
+        Debug.Log("111111");
 
         // タイマー消費
         spawnTimer -= Time.deltaTime;
         if (0 < spawnTimer) return;
         if (SpawnType.Group == enemySpawnData.spawnType)
         {
-            ////////////////////////////////////////////////////////////////////
-            //spawnGroup();
+            ///////////////////
+            spawnGroup();
+            Debug.Log("22222222");
+
         }
+
         else if (SpawnType.Normal == enemySpawnData.spawnType)
         {
             spawnNormal();
+            Debug.Log("333333");
+
         }
+        Debug.Log("44444");
+
         spawnTimer = enemySpawnData.SpawnDuration;
+        Debug.Log("555555");
     }
     //通常生成
     void spawnNormal()
@@ -130,75 +138,72 @@ public class EnemySpawnerController : MonoBehaviour
             createRandomEnemy(pos);
 
         }
+    }
         // ランダムなIDの敵生成
-        void createRandomEnemy(Vector3 pos)
+    void createRandomEnemy(Vector3 pos)  
+    {       
+        // データからランダムなIDを取得
+        int rnd = Random.Range(0, enemySpawnData.EnemyIds.Count);
+        int id = enemySpawnData.EnemyIds[rnd];
+        // 敵生成
+        EnemyController enemy = CharacterSettings.Instance.CreateEnemy(id, sceneDirector, pos);
+        enemies.Add(enemy);
+    }
+    // グループで生成
+    void spawnGroup()
+    {
+        // プレイヤーの位置
+        Vector3 center = sceneDirector.Player.transform.position;
+        // プレイヤーの周りから出現させる
+        float angle = Random.Range(0, 360);
+        // Cos関数にラジアン角を指定すると、Xの座標を返してくれる、radiusをかけてワールド座標に変換する
+        float x = Mathf.Cos(angle * Mathf.Deg2Rad) * SpawnRadius;
+        // Sin関数にラジアン角を指定すると、Yの座標を返してくれる、radiusをかけてワールド座標に変換する
+        float y = Mathf.Sin(angle * Mathf.Deg2Rad) * SpawnRadius;
+        // 生成位置
+        center += new Vector3(x, y, 0);
+        float radius = 0.5f;
+        // 敵生成
+        for (int i = 0; i < enemySpawnData.SpawnCountMax; i++)
         {
-            // データからランダムなIDを取得
-            int rnd = Random.Range(0, enemySpawnData.EnemyIds.Count);
-            int id = enemySpawnData.EnemyIds[rnd];
-
-            // 敵生成
-            EnemyController enemy = CharacterSettings.Instance.CreateEnemy(id, sceneDirector, pos);
-            Enemies.Add(enemy);
-
-
-
-        }
-        // グループで生成
-        void spawnGroup()
-        {
-            // プレイヤーの位置
-            Vector3 center = sceneDirector.Player.transform.position;
-
             // プレイヤーの周りから出現させる
-            float angle = Random.Range(0, 360);
+            angle = 360 / enemySpawnData.SpawnCountMax * i;
             // Cos関数にラジアン角を指定すると、Xの座標を返してくれる、radiusをかけてワールド座標に変換する
-            float x = Mathf.Cos(angle * Mathf.Deg2Rad) * SpawnRadius;
+            x = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
             // Sin関数にラジアン角を指定すると、Yの座標を返してくれる、radiusをかけてワールド座標に変換する
-            float y = Mathf.Sin(angle * Mathf.Deg2Rad) * SpawnRadius;
+            y = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
             // 生成位置
-            center += new Vector3(x, y, 0);
-            float radius = 0.5f;
-
-            // 敵生成
-
-            for (int i = 0; i < enemySpawnData.SpawnCountMax; i++)
-            {
-                // プレイヤーの周りから出現させる
-                angle = 360 / enemySpawnData.SpawnCountMax * i;
-                // Cos関数にラジアン角を指定すると、Xの座標を返してくれる、radiusをかけてワールド座標に変換する
-                x = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
-                // Sin関数にラジアン角を指定すると、Yの座標を返してくれる、radiusをかけてワールド座標に変換する
-                y = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
-                // 生成位置
-                Vector2 pos = center += new Vector3(x, y, 0);
-
-                // 当たり判定のあるタイル上なら生成しない
-                if (Units.IsCollisionTile(tilemapCollider, pos)) continue;
-                // 生成
-                createRandomEnemy(pos);
-
-            }
-            // 経過秒数で敵生成データを入れ替える
-            void updateEnemySpawnData()
-            {
-                //経過秒数に違いがあれば
-                if (oldSeconds == sceneDirector.OldSeconds) return;
-
-                // 1つ先のデータを参照
-                int idx = spawnDataIndex + 1;
-
-                // データの最後
-                if (enemySpawnDatas.Count - 1 < idx) return;
-
-
-            }
-
-
+            Vector2 pos = center += new Vector3(x, y, 0);
+            // 当たり判定のあるタイル上なら生成しない
+            if (Units.IsCollisionTile(tilemapCollider, pos)) continue;
+            // 生成
+            createRandomEnemy(pos);
         }
+    }
 
+    
+    // 経過秒数で敵生成データを入れ替える
+    
+    void updateEnemySpawnData()
+    {
+        //経過秒数に違いがあれば
+        if (oldSeconds == sceneDirector.OldSeconds) return;
+        // 1つ先のデータを参照
+        int idx = spawnDataIndex + 1;
+        // データの最後
+        if (enemySpawnDatas.Count - 1 < idx) return;
+        // 設定された経過時間を超えていたらデータを入れ替える
+        EnemySpawnData data = enemySpawnDatas[idx];
+        // 次回用の設定
+        spawnDataIndex = idx;
+        spawnTimer = 0;
+        oldSeconds = sceneDirector.OldSeconds;
 
-
-
+    }
+    // すべての敵を返す
+    public List<EnemyController> GetEnemies()
+    {
+        enemies.RemoveAll(item => !item);
+        return enemies;
     }
 }

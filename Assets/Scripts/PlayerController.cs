@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         //animator.SetTrigger(trigger);
 
         // 　移動範囲制御
+        // 例：もし、WorldStartよりX座標が小さくなったら、X座標をWorldStartのXの所に移動させる
         // 始点
         if (rigidbody2d.position.x < sceneDirector.WorldStart.x)
         {
@@ -129,6 +130,7 @@ public class PlayerController : MonoBehaviour
         pos.z = Camera.main.transform.position.z;
 
         // 始点
+        // 画面の左下端のタイルの座標よりもカメラの座標が小さければ、画面左端のタイルの座標へ戻す
         if (pos.x < sceneDirector.TileMapStart.x)
         {
             pos.x = sceneDirector.TileMapStart.x;
@@ -157,7 +159,6 @@ public class PlayerController : MonoBehaviour
     void moveSliderHP()
     {
         //ワールド座標をスクリーン座標に変換
-
         Vector3 pos = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
         pos.y -= 50;
         sliderHP.transform.position = pos;
@@ -167,7 +168,6 @@ public class PlayerController : MonoBehaviour
     // ダメージ
     public void Damage(float attack)
     {
-
         //非アクティブなら抜ける
         if (!enabled) return;
         //　最大値
@@ -193,7 +193,6 @@ public class PlayerController : MonoBehaviour
     {
         sliderHP.maxValue = Stats.MaxHP;
         sliderHP.value = Stats.HP;
-
     }
 
     void setSloderXP()
@@ -203,6 +202,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // 衝突したとき
     void OnCollitionEnter2D(Collision2D collition)
     {
         attackEnemy(collition);
@@ -224,15 +224,16 @@ public class PlayerController : MonoBehaviour
     {
         // エネミー以外
         if (!collision.gameObject.TryGetComponent<EnemyController>(out var enemy)) return;
-        //　タイマー未消化
+        //　タイマー未消化だったら終了
         if (0 < attackCoolDownTimer) return;
 
+        // ダメージを与える
         enemy.Damage(Stats.Attack);
         attackCoolDownTimer = attackCoolDownTimerMax;
     }
 
     // 各種タイマー設定
-
+    // 攻撃のクールタイムのタイマー開始
     void updateTimer()
     {
         if (0 < attackCoolDownTimer)
@@ -240,8 +241,4 @@ public class PlayerController : MonoBehaviour
             attackCoolDownTimer -= Time.deltaTime;
         }
     }
-
-
-
-
 }

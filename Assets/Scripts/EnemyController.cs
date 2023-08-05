@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
 
     public void Init(GameSceneDirector sceneDirector, CharacterStats characterStats)
     {
+
         this.sceneDirector = sceneDirector;
         this.Stats = characterStats;
 
@@ -87,11 +88,8 @@ public class EnemyController : MonoBehaviour
 
     // プレイヤーを追いかける
     void moveEnemy()
-
     {
         if (State.Alive != state) return;
-
-
         // 目的がプレイヤーなら進む方向を更新する
         if (MoveType.TargetPlayer == Stats.MoveType)
         {
@@ -113,16 +111,18 @@ public class EnemyController : MonoBehaviour
         {
             attackCoolDownTimer -= Time.deltaTime;
         }
-                // 生存時間が設定されていたらタイマー消化
-                if(0 < Stats.AliveTime)
+                
+        // 生存時間が設定されていたらタイマー消化        
+        if(0 < Stats.AliveTime)
         {
             Stats.AliveTime -= Time.deltaTime;
+           
             if (0 > Stats.AliveTime) setDead(false);
         }
     }
 
-            // 敵が死んだときに呼び出される
             
+    // 敵が死んだときに呼び出される        
     void setDead(bool createXP = true)
             
     {

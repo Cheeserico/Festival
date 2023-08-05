@@ -13,10 +13,29 @@ MonoBehaviour:
   m_Name: CharacterSettings
   m_EditorClassIdentifier: 
   datas:
-  - Title: "\u30C6\u30F3\u30B0"
+  - Title: Player
+    Id: 0
+    Lv: 1
+    Name: Player
+    Description: "\t\t"
+    Attack: 5
+    Defense: 1
+    HP: 100
+    MaxHP: 100
+    XP: 0
+    MaxXP: 10
+    MoveSpeed: 3
+    PickUpRange: 0.5
+    AliveTime: 0
+    prefab: {fileID: 1015719866346517046, guid: 593408904aead2d42b62b6b00967d72c, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 000000000100000002000000030000000400000005000000060000000700000008000000
+    UsableWeponMax: 6
+    MoveType: 0
+  - Title: Tengu
     Id: 100
     Lv: 0
-    Name: "\u30C6\u30F3\u30B0"
+    Name: Tengu
     Description: 
     Attack: 5
     Defense: 0
@@ -27,7 +46,159 @@ MonoBehaviour:
     MoveSpeed: 0.5
     PickUpRange: 0
     AliveTime: 0
-    prefab: {fileID: 0}
+    prefab: {fileID: 9047665138152214617, guid: d07c220ab79370c419c665bde944c407, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 0
+  - Title: RedRapper
+    Id: 101
+    Lv: 0
+    Name: RedRapper
+    Description: "\t\t"
+    Attack: 10
+    Defense: 0
+    HP: 29
+    MaxHP: 10
+    XP: 0.5
+    MaxXP: 1
+    MoveSpeed: 0.15
+    PickUpRange: 0
+    AliveTime: 0
+    prefab: {fileID: 3126237994245379007, guid: ac62a52bbd50c3843869f05b1430c4c3, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 0
+  - Title: Bicycle
+    Id: 102
+    Lv: 0
+    Name: Bicycle
+    Description: "\t\t"
+    Attack: 15
+    Defense: 0
+    HP: 29
+    MaxHP: 10
+    XP: 0.5
+    MaxXP: 1
+    MoveSpeed: 0.5
+    PickUpRange: 0
+    AliveTime: 0
+    prefab: {fileID: 7977223596916988571, guid: 01cefb415511ab6408104f4ab6057de3, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 1
+  - Title: GreenRappe
+    Id: 103
+    Lv: 0
+    Name: RedRappe
+    Description: "\t\t"
+    Attack: 15
+    Defense: 0
+    HP: 29
+    MaxHP: 10
+    XP: 0.5
+    MaxXP: 1
+    MoveSpeed: 0.3
+    PickUpRange: 0
+    AliveTime: 0
+    prefab: {fileID: 8859521033564303738, guid: 5c8c833201557cd44b166eb0694825e7, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 0
+  - Title: Shishima
+    Id: 104
+    Lv: 0
+    Name: Shishima
+    Description: "\t\t"
+    Attack: 15
+    Defense: 0
+    HP: 29
+    MaxHP: 10
+    XP: 0.5
+    MaxXP: 1
+    MoveSpeed: 0.3
+    PickUpRange: 0
+    AliveTime: 0
+    prefab: {fileID: 4688291232000162187, guid: 173966cc6fcb1b345af65452ea53832e, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 0
+  - Title: TuppariBoy
+    Id: 105
+    Lv: 0
+    Name: TuppariBoy
+    Description: "\t\t"
+    Attack: 15
+    Defense: 0
+    HP: 29
+    MaxHP: 10
+    XP: 0.5
+    MaxXP: 1
+    MoveSpeed: 0.3
+    PickUpRange: 0
+    AliveTime: 0
+    prefab: {fileID: 1427279966509587049, guid: 88bbc72e5deb67448b39165eac925dd5, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 1
+  - Title: TaigunBicycle
+    Id: 200
+    Lv: 1
+    Name: TaigunBicycle
+    Description: "\t\t"
+    Attack: 15
+    Defense: 0
+    HP: 3
+    MaxHP: 10
+    XP: 0.1
+    MaxXP: 0.5
+    MoveSpeed: 0.3
+    PickUpRange: 0
+    AliveTime: 15
+    prefab: {fileID: 7977223596916988571, guid: 01cefb415511ab6408104f4ab6057de3, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 1
+  - Title: TaigunShishima
+    Id: 201
+    Lv: 1
+    Name: TaigunShishima
+    Description: "\t\t"
+    Attack: 50
+    Defense: 0
+    HP: 500
+    MaxHP: 0
+    XP: 5
+    MaxXP: 10
+    MoveSpeed: 0.1
+    PickUpRange: 0
+    AliveTime: 90
+    prefab: {fileID: 4688291232000162187, guid: 173966cc6fcb1b345af65452ea53832e, type: 3}
+    DefaultWeaponIds: 
+    UsableWeponIds: 
+    UsableWeponMax: 0
+    MoveType: 0
+  - Title: Boss
+    Id: 500
+    Lv: 1
+    Name: Boss
+    Description: "\t\t"
+    Attack: 50
+    Defense: 0
+    HP: 5000
+    MaxHP: 0
+    XP: 20
+    MaxXP: 30
+    MoveSpeed: 0.1
+    PickUpRange: 0
+    AliveTime: -1
+    prefab: {fileID: 2514655628255721398, guid: 62df3adce93c8f64ba265d5c61fd3588, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0

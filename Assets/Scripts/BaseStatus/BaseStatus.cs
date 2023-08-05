@@ -45,7 +45,6 @@ public class BonusStats
 
 public class BaseStats
 {
-
     // Inspectorで表示されるタイトル
     public string Title;
     // データID
@@ -54,10 +53,8 @@ public class BaseStats
     public int Lv;
     // 名前
     public string Name;
-
     // 説明文
     [TextArea] public string Description;
-
     // 攻撃力
     public float Attack;
     // 防御力
@@ -81,7 +78,6 @@ public class BaseStats
     // thisを入力して呼び出す
     public float this[StatsType key]
     {
-
         // プロパティ　変数と関数　中間的なもの
         get
         {

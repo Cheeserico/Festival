@@ -32,19 +32,22 @@ public class GameSceneDirector : MonoBehaviour
     public float GameTimer;
     public float OldSeconds;
 
+    // 敵生成
+    [SerializeField] EnemySpawnerController enemySpawner;
+
 
     private void Start()
     {
         // 初期設定
         OldSeconds = -1;
-
+        enemySpawner.Init(this, tilemapCollider);
 
         //　カメラの移動できる範囲
 
         foreach (Transform item in grid.GetComponentInChildren<Transform>())
         {
             // 子供のポジションを割り出して、
-            // 開始位置（一番左上端の位置を割り出す）
+            // 開始位置（一番左下端のタイルの座標を割り出す）
             if (TileMapStart.x > item.position.x)
             {
                 TileMapStart.x = item.position.x;
@@ -55,7 +58,7 @@ public class GameSceneDirector : MonoBehaviour
                 TileMapStart.y = item.position.y;
             }
 
-            // 終了位置（一番右上端の位置を割り出す）
+            // 終了位置（一番右上端のタイルの座標を割り出す）
             if (TileMapEnd.x < item.position.x)
             {
                 TileMapEnd.x = item.position.x;
@@ -66,6 +69,7 @@ public class GameSceneDirector : MonoBehaviour
                 TileMapEnd.y = item.position.y;
             }
 
+            // カメラのサイズとアスペクト比から画面のサイズを割り出す
             // 画面縦半分の描画範囲（デフォルトで５タイル）
             float cameraSize = Camera.main.orthographicSize;
 
@@ -76,10 +80,7 @@ public class GameSceneDirector : MonoBehaviour
             // 
             WorldStart = new Vector2(TileMapStart.x - cameraSize * aspect, TileMapStart.y - cameraSize);
             WorldEnd = new Vector2(TileMapEnd.x + cameraSize * aspect, TileMapEnd.y + cameraSize);
-
         }
-
-
     }
 
     private void Update()
@@ -92,7 +93,9 @@ public class GameSceneDirector : MonoBehaviour
     // ダメージ表示
     public void DispDamege(GameObject target, float damege)
     {
+        //　プレハブを生成する
         GameObject obj = Instantiate(prefabTextDamage, parentTextDamage);
+        // プレハブのテキストを書き換えている
         obj.GetComponent<TextDamageController>().Init(target, damege);
     }
 
@@ -107,8 +110,8 @@ public class GameSceneDirector : MonoBehaviour
 
         textTimer.text = Units.GetTextTimer(GameTimer);
         OldSeconds = seconds;
-
-
-
     }
+
+
+
 }
