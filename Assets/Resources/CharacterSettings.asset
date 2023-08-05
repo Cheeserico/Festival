@@ -46,7 +46,7 @@ MonoBehaviour:
     MoveSpeed: 0.5
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 7767348929684751439, guid: bf3ad6eae9e665a4a8c40de1782fe14b, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
     MoveSpeed: 0.15
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 958826271410416503, guid: 03692d52b0677f847be5606c5971ed67, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
     MoveSpeed: 0.5
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 554153803005408980, guid: 5069a99c9bb110a4da2439492a386e73, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     MoveSpeed: 0.3
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 800645963346629005, guid: c6e3e2ce97430ef4ab98ed9da47181dd, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     MoveSpeed: 0.3
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 362883302689402487, guid: 8c26a010015976443869f161b7111c1e, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
     MoveSpeed: 0.3
     PickUpRange: 0
     AliveTime: 0
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 1571002378278599830, guid: 9862ef5acb37f7a4980ac7ce0f4533b7, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
     MoveSpeed: 0.3
     PickUpRange: 0
     AliveTime: 15
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 554153803005408980, guid: 5069a99c9bb110a4da2439492a386e73, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
     MoveSpeed: 0.1
     PickUpRange: 0
     AliveTime: 90
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 362883302689402487, guid: 8c26a010015976443869f161b7111c1e, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
     MoveSpeed: 0.1
     PickUpRange: 0
     AliveTime: -1
-    Prefab: {fileID: 0}
+    Prefab: {fileID: 5445445748322493964, guid: b6cc3cca5cf567c458471b28008f751e, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
