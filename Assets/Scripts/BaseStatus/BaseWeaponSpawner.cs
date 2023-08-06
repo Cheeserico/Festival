@@ -42,6 +42,7 @@ public class BaseWeaponSpawner : MonoBehaviour
         GameObject obj = Instantiate(PrefabWeapon, position, PrefabWeapon.transform.rotation, parent);
         // 共通データセット
         BaseWeapon weapon = obj.GetComponent<BaseWeapon>();
+        weapon.Init(this, forward);
         // データ初期化
         weapons.Add(weapon);
         // 武器リストへ追加
