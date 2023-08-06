@@ -28,9 +28,9 @@ MonoBehaviour:
     PickUpRange: 0.5
     AliveTime: 0
     Prefab: {fileID: 7538915288751843251, guid: adba8c356fa62b14cbaca1f20aebeaa7, type: 3}
-    DefaultWeaponIds: 00000000010000000200000003000000
-    UsableWeponIds: 000000000100000002000000030000000400000005000000060000000700000008000000
-    UsableWeponMax: 6
+    DefaultWeaponIds: 02000000
+    UsableWeponIds: 00000000010000000200000003000000
+    UsableWeponMax: 4
     MoveType: 0
   - Title: Tengu
     Id: 100

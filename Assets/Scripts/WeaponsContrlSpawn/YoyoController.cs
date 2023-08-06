@@ -13,6 +13,10 @@ public class YoyoController : BaseWeapon
     // 弓の先端がターゲットへ向くように角度を設定する
     void Start()
     {
+        if (!Target)
+        {
+            return;
+        }
         // 進行方向
         Vector2 forward = Target.transform.position - transform.position;
         // 角度に変換する

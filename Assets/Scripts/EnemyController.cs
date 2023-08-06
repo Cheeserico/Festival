@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public CharacterStats Stats;
 
     [SerializeField] GameSceneDirector sceneDirector;
+    [SerializeField] Xp xp;
     Rigidbody2D rigidbody2d;
 
     // 攻撃のクールダウン
@@ -69,13 +70,12 @@ public class EnemyController : MonoBehaviour
 
         // 初期値
         // Rotate関数は指定した角度を加算するのに対し、eulerAngles変数は指定した座標に変換
-        Vector3 rotation = transform.rotation.eulerAngles;
-        rotation.z = z;
+        //Vector3 rotation = transform.rotation.eulerAngles;
+        // rotation.z = z;
 
         //　目標値
-        transform.eulerAngles = rotation;
-        transform.DORotate(new Vector3(0, 0, -z), speed)
-            .SetLoops(-1, LoopType.Yoyo);
+        // transform.eulerAngles = rotation;
+        //transform.DORotate(new Vector3(0, 0, -z), speed).SetLoops(-1, LoopType.Yoyo);
 
         // 進む方向
         PlayerController player = sceneDirector.Player;
@@ -137,6 +137,7 @@ public class EnemyController : MonoBehaviour
         if(createXP)
         {
             // TODO 経験値生成
+            Instantiate(xp, transform.position, Quaternion.identity);
         }
         state = State.Dead;
     }

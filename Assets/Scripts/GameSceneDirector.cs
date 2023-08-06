@@ -40,12 +40,15 @@ public class GameSceneDirector : MonoBehaviour
     [SerializeField] Slider sliderHP;
     [SerializeField] Text textLv;
 
+    // レベルアップ
+    [SerializeField] LevelUpPanel levelUPPanel;
+
     private void Start()
     {
         // プレイヤー作成
         int playerID = 0;
         Player = CharacterSettings.Instance.CreatePlayer(playerID, this, enemySpawner, textLv, sliderHP, sliderXP);
-
+        Player.OnLevelUp += ShowLevelUpPanel;
         // 初期設定
         OldSeconds = -1;
         enemySpawner.Init(this, tilemapCollider);
@@ -89,6 +92,11 @@ public class GameSceneDirector : MonoBehaviour
             WorldStart = new Vector2(TileMapStart.x - cameraSize * aspect, TileMapStart.y - cameraSize);
             WorldEnd = new Vector2(TileMapEnd.x + cameraSize * aspect, TileMapEnd.y + cameraSize);
         }
+    }
+
+    public void ShowLevelUpPanel()
+    {
+        levelUPPanel.Show();
     }
 
     private void Update()

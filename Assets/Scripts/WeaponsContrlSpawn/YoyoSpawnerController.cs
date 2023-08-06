@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class YoyoSpawnerController : BaseWeaponSpawner
 {   
@@ -14,8 +15,13 @@ public class YoyoSpawnerController : BaseWeaponSpawner
         spawnTimer = stats.GetRandomSpawnTimer();
         // 敵がいない
         if (1 > enemySpawner.GetEnemies().Count) return;
+        List<EnemyController> enemies = enemySpawner.GetEnemies().FindAll(x => Vector2.Distance(transform.position, x.transform.position) < 5);
+        if (enemies.Count > 0)
+        {
+            enemies.Sort((a,b) => (int)(Vector2.Distance(transform.position, a.transform.position) - Vector2.Distance(transform.position, b.transform.position)));
+        }
 
-        for(int i = 0; i < (int)stats.SpawnCount; i++)
+        for (int i = 0; i < (int)stats.SpawnCount; i++)
         {
             // 武器生成
             
@@ -23,9 +29,14 @@ public class YoyoSpawnerController : BaseWeaponSpawner
                 (YoyoController)createWeapon(transform.position);
 
             // ランダムでターゲットを決定
-            List<EnemyController> enemies = enemySpawner.GetEnemies();
-            int rnd = Random.Range(0, enemies.Count);
-            EnemyController target = enemies[rnd];
+            EnemyController target = null;
+            if (enemies.Count > i)
+            {
+                target = enemies[i];
+            }
+
+
+
 
             ctrl.Target = target;
 

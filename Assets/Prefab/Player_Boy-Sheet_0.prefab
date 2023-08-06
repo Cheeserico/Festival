@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &890105280962275131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,5 +191,6 @@ MonoBehaviour:
     UsableWeponIds: 
     UsableWeponMax: 0
     MoveType: 0
+  levelRequiements: 
   Forward: {x: 0, y: 0}
   WeaponSpawners: []

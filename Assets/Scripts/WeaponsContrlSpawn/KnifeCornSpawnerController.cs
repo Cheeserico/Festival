@@ -22,5 +22,6 @@ public class KnifeCornSpawnerController : BaseWeaponSpawner
         if (isSpawnTimerNotElapsed()) return;
         // ïêäÌê∂ê¨
         KnifeCornController ctrl = (KnifeCornController)createWeapon(transform.position, player.Forward);
+        spawnTimer = onceSpawnTime;
     }
 }

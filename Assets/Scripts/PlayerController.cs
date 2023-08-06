@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
 
     // 必要XP
-    List<int> levelRequiements;
+    [SerializeField]List<int> levelRequiements;
     // 敵生成装置
     EnemySpawnerController enemySpawner;
     // 向き
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour
     // 現在装備中の武器
     public List<BaseWeaponSpawner> WeaponSpawners;
 
+
+    public UnityAction OnLevelUp;
 
 
     // Start is called before the first frame update
@@ -108,7 +111,7 @@ public class PlayerController : MonoBehaviour
                 addxp = 13;
             }
 
-            levelRequiements.Add(prevxp);
+            levelRequiements.Add(prevxp+addxp);
         }
 
         // Lv2の必要経験値
@@ -138,28 +141,24 @@ public class PlayerController : MonoBehaviour
         Vector2 dir = Vector2.zero;
 
         //　再生するアニメーション
-        string trigger = "";
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
             dir += Vector2.up;
-            trigger = "isUp";
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             dir -= Vector2.up;
-            trigger = "isDown";
+  
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             dir += Vector2.right;
-            trigger = "isRight";
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             dir -= Vector2.right;
-            trigger = "isLeft";
         }
         // 入力がなければ抜ける
         if (Vector2.zero == dir) return;
@@ -307,6 +306,26 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void AddEx()
+    {
+        Stats.XP += 1;
+        setSliderXP();
+        if (levelRequiements[Stats.Lv] == Stats.XP)
+        {
+            Stats.XP = 0;
+            Stats.Lv++;
+            Stats.MaxXP = levelRequiements[Stats.Lv];
+            OnLevelUp?.Invoke();
+        }
+
+        // UI初期化
+        setTextLv();
+
+        setSliderHP();
+
+        setSliderXP();
+    }
+
     // プレイヤーへ攻撃する
     void attackEnemy(Collision2D collision)
     {
@@ -339,7 +358,7 @@ public class PlayerController : MonoBehaviour
 
     // 武器を追加
     // 武器のレベルアップと新規装備の両方で使う
-    void addWeaponSpawner(int id)
+    public void addWeaponSpawner(int id)
     {
         // TODO 装備済みならレベルアップ
         BaseWeaponSpawner spawner = WeaponSpawners.Find(item => item.stats.Id == id);

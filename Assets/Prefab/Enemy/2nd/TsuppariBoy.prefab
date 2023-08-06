@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &864063577484679249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,9 +176,10 @@ MonoBehaviour:
     MoveSpeed: 0
     PickUpRange: 0
     AliveTime: 0
-    prefab: {fileID: 0}
+    Prefab: {fileID: 0}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
     MoveType: 0
   sceneDirector: {fileID: 0}
+  xp: {fileID: 1335078168745652476, guid: 1067f556fcab8844297dcf4a1bf0e646, type: 3}
