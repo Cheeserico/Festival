@@ -206,6 +206,7 @@ public class EnemySpawnerController : MonoBehaviour
     // ‚·‚×‚Ä‚Ì“G‚ð•Ô‚·
     public List<EnemyController> GetEnemies()
     {
+        // =>True‚ÆFalse‚Ì‚æ‚¤‚È‚à‚Ìitem‚Ì‚ ‚éðŒ‚É“–‚½‚Á‚½‚à‚Ì‚ÍƒŠƒ€[ƒu‚·‚é
         enemies.RemoveAll(item => !item);
         return enemies;
     }

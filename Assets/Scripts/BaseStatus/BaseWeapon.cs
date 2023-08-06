@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseWeapon : MonoBehaviour
 {
+    // BaseWeponにprotectで定義した関数なので定義してなくても継承先のクラスで呼べる。クラスを継承したら
     // 親の生成装置
     protected BaseWeaponSpawner spawner;
     // 武器ステータス

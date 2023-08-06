@@ -35,6 +35,7 @@ public class BaseWeaponSpawner : MonoBehaviour
 
     // 武器生成
     // 武器を生成するときの一連の共通した処理
+    // BaseWeponにprotectで定義した関数なので定義してなくても継承先のクラスで呼べる。クラスを継承したら
     protected BaseWeapon createWeapon(Vector3 position, Vector2 forward, Transform parent = null)
     {
         // 生成
@@ -70,6 +71,17 @@ public class BaseWeaponSpawner : MonoBehaviour
             item.GetComponent<Rigidbody2D>().simulated = enabled;
         }
     }
+    // タイマー消化チェック
+    protected bool isSpawnTimerNotElapsed()
+    {
+        // タイマー消化
+        spawnTimer -= Time.deltaTime;
+        if (0 < spawnTimer) return true;
+        return false;
+    }
+
+
+
         // TODO　レベルアップ時のデータを返す
 
 }
