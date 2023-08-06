@@ -86,10 +86,10 @@ MonoBehaviour:
     MaxXP: 0
     MoveSpeed: 10
     PickUpRange: 0
-    AliveTime: 10
+    AliveTime: 30
     PrefabSpawner: {fileID: 4982616174689911519, guid: 26ca4e11f15fd18478080102b161916b, type: 3}
     Icon: {fileID: 21300000, guid: a428729fcfc0b4c52b68c1bfa9959418, type: 3}
     LevelUpItemId: 3
-    SpawnCount: 3
+    SpawnCount: 1
     SpawnTimerMin: 3
     SpawnTimerMax: 3
