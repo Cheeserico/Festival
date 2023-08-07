@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         // 作ってあったシングルトンのキャラクターセッティングから１００番目のデータを読み込む
-        Init(this.sceneDirector, CharacterSettings.Instance.Get(100));
+        // Init(this.sceneDirector, CharacterSettings.Instance.Get(100));
     }
 
     // Update is called once per frame

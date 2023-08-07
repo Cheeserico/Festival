@@ -157,7 +157,7 @@ MonoBehaviour:
     MaxHP: 10
     XP: 0.1
     MaxXP: 0.5
-    MoveSpeed: 0.3
+    MoveSpeed: 5
     PickUpRange: 0
     AliveTime: 15
     Prefab: {fileID: 554153803005408980, guid: 5069a99c9bb110a4da2439492a386e73, type: 3}
