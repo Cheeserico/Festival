@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8498408520369086022}
   - component: {fileID: 6255422434570698172}
   - component: {fileID: 5489083932712911711}
+  - component: {fileID: -8698315359802307220}
+  - component: {fileID: -2037613011884784596}
   m_Layer: 0
   m_Name: EnemyRedRappe
   m_TagString: Untagged
@@ -183,3 +185,37 @@ MonoBehaviour:
     MoveType: 0
   sceneDirector: {fileID: 0}
   xp: {fileID: 1335078168745652476, guid: 1067f556fcab8844297dcf4a1bf0e646, type: 3}
+--- !u!95 &-8698315359802307220
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958826271410416503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc5461893716049bd89d72f4c46b799b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2037613011884784596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958826271410416503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800944d7f76b7480284b1b2cceeaa791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: 4c3041d2da71e4e45be9e140b58c365e, type: 3}

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5917455270022139183}
   - component: {fileID: 1099390890570634442}
   - component: {fileID: 5059165277370098191}
+  - component: {fileID: 1013630136499733531}
+  - component: {fileID: 4805926206905786081}
   m_Layer: 0
   m_Name: Shishimai-Sheet_0
   m_TagString: Untagged
@@ -183,3 +185,37 @@ MonoBehaviour:
     MoveType: 0
   sceneDirector: {fileID: 0}
   xp: {fileID: 1335078168745652476, guid: 1067f556fcab8844297dcf4a1bf0e646, type: 3}
+--- !u!95 &1013630136499733531
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688291232000162187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc5461893716049bd89d72f4c46b799b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4805926206905786081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688291232000162187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800944d7f76b7480284b1b2cceeaa791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: 71b59713312d4410fadbc3a5fadf6270, type: 3}

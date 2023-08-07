@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSceneDirector : MonoBehaviour
 {
@@ -42,13 +43,15 @@ public class GameSceneDirector : MonoBehaviour
 
     // レベルアップ
     [SerializeField] LevelUpPanel levelUPPanel;
+    [SerializeField] ResultPanel resultPanel;
 
     private void Start()
     {
         // プレイヤー作成
         int playerID = 0;
         Player = CharacterSettings.Instance.CreatePlayer(playerID, this, enemySpawner, textLv, sliderHP, sliderXP);
-        Player.OnLevelUp += ShowLevelUpPanel;
+        Player.OnLevelUp = ShowLevelUpPanel;
+        Player.OnGameOver = OnGameOver;
         // 初期設定
         OldSeconds = -1;
         enemySpawner.Init(this, tilemapCollider);
@@ -95,6 +98,18 @@ public class GameSceneDirector : MonoBehaviour
 
         SoundManager.Instance.PlayBGM();
     }
+    bool isGameOver;
+
+    void OnGameOver()
+    {
+        if (isGameOver)
+        {
+            return;
+        }
+        isGameOver = true;
+        Time.timeScale = 0;
+        resultPanel.Show(Player, this);
+    }
 
     public void ShowLevelUpPanel()
     {
@@ -133,6 +148,11 @@ public class GameSceneDirector : MonoBehaviour
         OldSeconds = seconds;
     }
 
-
+    public void OnRetryButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameScene");
+//        FadeManager.Instance.LoadScene("GameScene",1);
+    }
 
 }

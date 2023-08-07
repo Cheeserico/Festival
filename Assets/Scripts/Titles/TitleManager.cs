@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
+    bool wasStart;
     public void OnStartButton()
     {
-        SceneManager.LoadScene("GameScene");
+        if (wasStart)
+        {
+            return;
+        }
+        wasStart = true;
+        FadeManager.Instance.LoadScene("GameScene",1);
     }
 }

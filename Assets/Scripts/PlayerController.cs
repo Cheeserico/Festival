@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
 
     public UnityAction OnLevelUp;
+    public UnityAction OnGameOver;
 
 
     // Start is called before the first frame update
@@ -268,7 +269,7 @@ public class PlayerController : MonoBehaviour
         //TODO ゲームオーバー
         if(0>Stats.HP)
         {
-
+            OnGameOver?.Invoke();
         }
 
         if (0 > Stats.HP) Stats.HP = 0;

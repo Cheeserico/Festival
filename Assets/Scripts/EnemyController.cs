@@ -62,7 +62,7 @@ public class EnemyController : MonoBehaviour
         float x = addx * random;
         transform.DOScale(x, speed)
             .SetRelative()
-            .SetLoops(-1, LoopType.Yoyo);
+            .SetLoops(-1, LoopType.Yoyo).SetLink(gameObject);
 
         //　回転
         float addz = 10f;
@@ -132,7 +132,7 @@ public class EnemyController : MonoBehaviour
         // アニメーションを停止
         transform.DOKill();
         // 縦に潰れるアニメーション
-        transform.DOScaleY(0, 0.5f).OnComplete(() => Destroy(gameObject));
+        transform.DOScaleY(0, 0.5f).SetLink(gameObject).OnComplete(() => Destroy(gameObject));
         // 経験値を作成
         if(createXP)
         {
