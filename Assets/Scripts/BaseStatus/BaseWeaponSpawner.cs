@@ -82,7 +82,7 @@ public class BaseWeaponSpawner : MonoBehaviour
     }
     
     // TODO　レベルアップ時のデータを返す
-    public void LevelUp()
+    public virtual void LevelUp()
     {
         stats.Lv++;
         this.stats = WeaponSpawnerSettings.Instance.Get(stats.Id, stats.Lv);

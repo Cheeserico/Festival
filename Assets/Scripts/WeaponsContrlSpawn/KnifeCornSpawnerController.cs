@@ -7,7 +7,7 @@ public class KnifeCornSpawnerController : BaseWeaponSpawner
     // 一度の生成に時差をつける
     // 0.3秒時間差をつけて、スポーンカウントを消費したら通常のタイマーをセットする
     int onceSpawnCount;
-    float onceSpawnTime = 0.3f;
+    float onceSpawnTime = 0.5f;
     PlayerController player;
 
     // Start is called before the first frame update
@@ -24,4 +24,16 @@ public class KnifeCornSpawnerController : BaseWeaponSpawner
         KnifeCornController ctrl = (KnifeCornController)createWeapon(transform.position, player.Forward);
         spawnTimer = onceSpawnTime;
     }
+
+    public override void LevelUp()
+    {
+        stats.Lv++;
+        this.stats = WeaponSpawnerSettings.Instance.Get(stats.Id, stats.Lv);
+        onceSpawnTime -= 0.1f;
+        if (onceSpawnTime <= 0)
+        {
+            onceSpawnTime = 0.1f;
+        }
+    }
+
 }

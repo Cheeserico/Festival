@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OmenController : BaseWeapon
 {
-
+    int hitCount;
     private void Update()
     {
         // ‰ñ“]
@@ -17,5 +17,14 @@ public class OmenController : BaseWeapon
     private void OnTriggerEnter2D(Collider2D collision)
     {
         attackEnemy(collision);
+        if (collision.GetComponent<EnemyController>())
+        {
+            hitCount++;
+            if (hitCount >= 3)
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 }

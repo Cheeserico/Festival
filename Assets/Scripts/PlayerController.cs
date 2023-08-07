@@ -96,20 +96,20 @@ public class PlayerController : MonoBehaviour
             // 一つ前の閾値
             int prevxp = levelRequiements[i - 1];
             // 41以降はレベル毎に16ずつ
-            int addxp = 16;
+            int addxp = 12;
 
             // レベル
             if(i==1)
             {
                 addxp = 5;
             }
+            else if(10 >= i)
+            {
+                addxp = 7;
+            }
             else if(20 >= i)
             {
                 addxp = 10;
-            }
-            else if(40 >= i)
-            {
-                addxp = 13;
             }
 
             levelRequiements.Add(prevxp+addxp);
