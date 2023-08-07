@@ -24378,7 +24378,7 @@ MonoBehaviour:
     ElapsedSeconds: 2
     spawnType: 1
     SpawnDuration: 4
-    SpawnCountMax: 30
+    SpawnCountMax: 10
     EnemyIds: c8000000
   - Title: 0:15 Teng
     ElapsedMinutes: 0
