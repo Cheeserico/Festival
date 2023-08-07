@@ -105,11 +105,11 @@ public class PlayerController : MonoBehaviour
             }
             else if(10 >= i)
             {
-                addxp = 7;
+                addxp = 1;
             }
             else if(20 >= i)
             {
-                addxp = 10;
+                addxp = 2;
             }
 
             levelRequiements.Add(prevxp+addxp);

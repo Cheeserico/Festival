@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1274855985
+    locked: 0
+  - name: Money
+    uniqueID: 4160105485
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1963345423
+    locked: 0
+  - name: Enemy
+    uniqueID: 1158762525
+    locked: 0
+  - name: Weapon
+    uniqueID: 2491742613
     locked: 0
