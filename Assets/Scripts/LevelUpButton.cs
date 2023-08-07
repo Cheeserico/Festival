@@ -18,7 +18,7 @@ public class LevelUpButton : MonoBehaviour
     {
         weaponName.text = weaponSpawnerStats.Name;
         weaponImage.sprite = weaponSpawnerStats.Icon;
-        weaponLevel.text = weaponSpawnerStats.Lv.ToString();
+        weaponLevel.text = $"Lv.{weaponSpawnerStats.Lv}";
         weaponHelp.text = weaponSpawnerStats.Description;
         this.weaponSpawnerStats = weaponSpawnerStats;
     }

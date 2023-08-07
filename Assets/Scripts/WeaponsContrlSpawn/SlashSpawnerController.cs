@@ -47,8 +47,15 @@ public class SlashSpawnerController : BaseWeaponSpawner
             spawnTimer = stats.GetRandomSpawnTimer();
             onceSpawnCount = (int)stats.SpawnCount;
         }
+    }
 
-
-
+    public override void LevelUp()
+    {
+        base.LevelUp();
+        onceSpawnTime -= 0.2f;
+        if (onceSpawnTime <= 0.2f)
+        {
+            onceSpawnTime = 0.2f;
+        }
     }
 }

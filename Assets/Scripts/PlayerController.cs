@@ -250,7 +250,6 @@ public class PlayerController : MonoBehaviour
         Vector3 pos = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
         pos.y -= 50;
         sliderHP.transform.position = pos;
-
     }
     // ダメージを受けたらGameSceneDirectorのダメージ関数を呼び出す処理
     // ダメージ
@@ -367,6 +366,11 @@ public class PlayerController : MonoBehaviour
         if(spawner)
         {
             spawner.LevelUp();
+            if (spawner.stats.Lv>=6)
+            {
+                Stats.HP += 10;
+                setSliderHP();
+            }
             // レベルUP
             return;
         }

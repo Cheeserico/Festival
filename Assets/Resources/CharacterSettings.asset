@@ -28,7 +28,7 @@ MonoBehaviour:
     PickUpRange: 0.5
     AliveTime: 0
     Prefab: {fileID: 7538915288751843251, guid: adba8c356fa62b14cbaca1f20aebeaa7, type: 3}
-    DefaultWeaponIds: 02000000
+    DefaultWeaponIds: 00000000
     UsableWeponIds: 00000000010000000200000003000000
     UsableWeponMax: 4
     MoveType: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     MaxHP: 10
     XP: 0.1
     MaxXP: 0.5
-    MoveSpeed: 0.5
+    MoveSpeed: 0.9
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 7767348929684751439, guid: bf3ad6eae9e665a4a8c40de1782fe14b, type: 3}
@@ -62,7 +62,7 @@ MonoBehaviour:
     MaxHP: 10
     XP: 0.5
     MaxXP: 1
-    MoveSpeed: 0.15
+    MoveSpeed: 0.8
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 958826271410416503, guid: 03692d52b0677f847be5606c5971ed67, type: 3}
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaxHP: 10
     XP: 0.5
     MaxXP: 1
-    MoveSpeed: 0.5
+    MoveSpeed: 1.2
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 554153803005408980, guid: 5069a99c9bb110a4da2439492a386e73, type: 3}
@@ -195,7 +195,7 @@ MonoBehaviour:
     MaxHP: 0
     XP: 20
     MaxXP: 30
-    MoveSpeed: 0.1
+    MoveSpeed: 0.6
     PickUpRange: 0
     AliveTime: -1
     Prefab: {fileID: 5445445748322493964, guid: b6cc3cca5cf567c458471b28008f751e, type: 3}
