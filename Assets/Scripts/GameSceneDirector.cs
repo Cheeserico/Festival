@@ -92,6 +92,8 @@ public class GameSceneDirector : MonoBehaviour
             WorldStart = new Vector2(TileMapStart.x - cameraSize * aspect, TileMapStart.y - cameraSize);
             WorldEnd = new Vector2(TileMapEnd.x + cameraSize * aspect, TileMapEnd.y + cameraSize);
         }
+
+        SoundManager.Instance.PlayBGM();
     }
 
     public void ShowLevelUpPanel()

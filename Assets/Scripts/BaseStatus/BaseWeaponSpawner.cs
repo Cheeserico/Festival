@@ -80,9 +80,11 @@ public class BaseWeaponSpawner : MonoBehaviour
         if (0 < spawnTimer) return true;
         return false;
     }
-
-
-
-        // TODO　レベルアップ時のデータを返す
-
+    
+    // TODO　レベルアップ時のデータを返す
+    public void LevelUp()
+    {
+        stats.Lv++;
+        this.stats = WeaponSpawnerSettings.Instance.Get(stats.Id, stats.Lv);
+    }
 }

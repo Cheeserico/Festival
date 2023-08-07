@@ -51,19 +51,8 @@ public class YoyoController : BaseWeapon
         // 通常ダメージ
         float attack = stats.Attack;
 
-        // ターゲットと衝突
-        if(Target == enemy)
-        {
-            Target = null;
-        }
-
-        // ターゲット以外の敵は三分の一のダメージ
-        else
-        {
-            attack /= 3;
-        }
-
         attackEnemy(collision, attack);
+        Target = null;
 
     }
 

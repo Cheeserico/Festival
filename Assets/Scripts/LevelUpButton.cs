@@ -6,24 +6,25 @@ using UnityEngine.Events;
 
 public class LevelUpButton : MonoBehaviour
 {
-    int id;
+    WeaponSpawnerStats weaponSpawnerStats;
+    int level;
     [SerializeField] Text weaponName;
     [SerializeField] Image weaponImage;
     [SerializeField] Text weaponLevel;
     [SerializeField] Text weaponHelp;
 
-    public UnityAction<int> OnSelect;
+    public UnityAction<WeaponSpawnerStats> OnSelect;
     public void SetWeapon(WeaponSpawnerStats weaponSpawnerStats)
     {
         weaponName.text = weaponSpawnerStats.Name;
         weaponImage.sprite = weaponSpawnerStats.Icon;
-        // weaponLevel.text = weaponSpawnerStats.;
-        // weaponHelp.text = weaponSpawnerStats.help;
-        id = weaponSpawnerStats.Id;
+        weaponLevel.text = weaponSpawnerStats.Lv.ToString();
+        weaponHelp.text = weaponSpawnerStats.Description;
+        this.weaponSpawnerStats = weaponSpawnerStats;
     }
 
     public void OnSelectWeapon()
     {
-        OnSelect?.Invoke(id);
+        OnSelect?.Invoke(weaponSpawnerStats);
     }
 }

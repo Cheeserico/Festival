@@ -13,7 +13,7 @@ public class LevelUpPanel : MonoBehaviour
     {
         foreach (var levelUpButton in levelUpButtons)
         {
-            levelUpButton.OnSelect += OnSelectWeapon; ;
+            levelUpButton.OnSelect += OnSelectWeapon;
         }
     }
     public void Show() 
@@ -29,13 +29,22 @@ public class LevelUpPanel : MonoBehaviour
         {
             int id = Random.Range(0, weaponIDs.Count);
             var weapon = WeaponSpawnerSettings.Instance.Get(id, 1);
-            levelUpButton.SetWeapon(weapon);
+            BaseWeaponSpawner weaponSpawner = gameSceneDirector.Player.WeaponSpawners.Find(x => x.stats.Id == id);
+            if (weaponSpawner)
+            {
+                weapon = WeaponSpawnerSettings.Instance.Get(id, weaponSpawner.stats.Lv+1);
+                levelUpButton.SetWeapon(weapon);
+            }
+            else
+            {
+                levelUpButton.SetWeapon(weapon);
+            }
         }
     }
 
-    void OnSelectWeapon(int id)
+    void OnSelectWeapon(WeaponSpawnerStats weaponSpawnerStats)
     {
-        gameSceneDirector.Player.addWeaponSpawner(id);
+        gameSceneDirector.Player.addWeaponSpawner(weaponSpawnerStats.Id);
         Close();
     }
 
