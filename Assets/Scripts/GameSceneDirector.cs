@@ -127,12 +127,12 @@ public class GameSceneDirector : MonoBehaviour
 
     // プレハブからTextDamageControllerで作ったコントローラの関数を呼び出す
     // ダメージ表示
-    public void DispDamege(GameObject target, float damege)
+    public void DispDamege(GameObject target, float damege, bool heal = false)
     {
         //　プレハブを生成する
         GameObject obj = Instantiate(prefabTextDamage, parentTextDamage);
         // プレハブのテキストを書き換えている
-        obj.GetComponent<TextDamageController>().Init(target, damege);
+        obj.GetComponent<TextDamageController>().Init(target, damege, heal);
     }
 
     //　ゲームタイマー

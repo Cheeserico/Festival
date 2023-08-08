@@ -34,7 +34,7 @@ public class TextDamageController : MonoBehaviour
     
     // 生成時に呼ばれる関数
     // 初期化
-    public void Init(GameObject target, float damage)
+    public void Init(GameObject target, float damage, bool heal = false)
     {
         this.target = target;
         TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
@@ -43,7 +43,14 @@ public class TextDamageController : MonoBehaviour
         // プレイヤーのダメージは赤表示
         if(target.GetComponent<PlayerController>())
         {
-            text.color = Color.red;
+            if (heal)
+            {
+                text.color = Color.green;
+            }
+            else
+            {
+                text.color = Color.red;
+            }
         }
 
     }

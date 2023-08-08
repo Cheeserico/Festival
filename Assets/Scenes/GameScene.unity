@@ -26150,13 +26150,6 @@ MonoBehaviour:
     SpawnDuration: 8
     SpawnCountMax: 10
     EnemyIds: 64000000
-  - Title: 1:30 Boy
-    ElapsedMinutes: 0
-    ElapsedSeconds: 5
-    spawnType: 0
-    SpawnDuration: 20
-    SpawnCountMax: 60
-    EnemyIds: 69000000
   - Title: 0:15 GreenRappe
     ElapsedMinutes: 0
     ElapsedSeconds: 30
@@ -26189,8 +26182,8 @@ MonoBehaviour:
     ElapsedMinutes: 1
     ElapsedSeconds: 30
     spawnType: 0
-    SpawnDuration: 10
-    SpawnCountMax: 30
+    SpawnDuration: 5
+    SpawnCountMax: 60
     EnemyIds: 69000000
   - Title: 1:35 Tengu
     ElapsedMinutes: 1

@@ -277,6 +277,20 @@ public class PlayerController : MonoBehaviour
         SoundManager.Instance.PlaySE(SE.Damage);
     }
 
+    public void Heal()
+    {
+        Stats.HP += 10;
+        if (Stats.HP >= Stats.MaxHP)
+        {
+            Stats.HP = Stats.MaxHP;
+        }
+
+        // ダメージ表示
+        sceneDirector.DispDamege(gameObject, 10, true);
+        setSliderHP();
+        SoundManager.Instance.PlaySE(SE.Xp);
+    }
+
     // HPスライダーの値を更新
     void setSliderHP()
     {

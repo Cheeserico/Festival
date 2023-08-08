@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] GameSceneDirector sceneDirector;
     [SerializeField] Xp xp;
+    [SerializeField] HealItem healPrefab;
     Rigidbody2D rigidbody2d;
 
     // 攻撃のクールダウン
@@ -137,7 +138,14 @@ public class EnemyController : MonoBehaviour
         if(createXP)
         {
             // TODO 経験値生成
-            Instantiate(xp, transform.position, Quaternion.identity);
+            if (Random.Range(0,100) < 4)
+            {
+                Instantiate(healPrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(xp, transform.position, Quaternion.identity);
+            }
         }
         state = State.Dead;
     }
