@@ -26168,8 +26168,8 @@ MonoBehaviour:
     ElapsedMinutes: 1
     ElapsedSeconds: 0
     spawnType: 1
-    SpawnDuration: 2
-    SpawnCountMax: 10
+    SpawnDuration: 4
+    SpawnCountMax: 8
     EnemyIds: c8000000
   - Title: 1:15 Tengu
     ElapsedMinutes: 1
@@ -26192,6 +26192,27 @@ MonoBehaviour:
     SpawnDuration: 8
     SpawnCountMax: 10
     EnemyIds: 64000000
+  - Title: 2:10 shishimai
+    ElapsedMinutes: 2
+    ElapsedSeconds: 10
+    spawnType: 0
+    SpawnDuration: 5
+    SpawnCountMax: 5
+    EnemyIds: 68000000
+  - Title: 2:30 Tengu
+    ElapsedMinutes: 2
+    ElapsedSeconds: 30
+    spawnType: 0
+    SpawnDuration: 5
+    SpawnCountMax: 10
+    EnemyIds: 64000000
+  - Title: 2:45 TaigunBicycle
+    ElapsedMinutes: 2
+    ElapsedSeconds: 45
+    spawnType: 1
+    SpawnDuration: 2
+    SpawnCountMax: 10
+    EnemyIds: c8000000
 --- !u!4 &2087213757
 Transform:
   m_ObjectHideFlags: 0
