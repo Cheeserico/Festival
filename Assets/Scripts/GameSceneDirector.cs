@@ -123,16 +123,6 @@ public class GameSceneDirector : MonoBehaviour
     {
         // ゲームタイマー更新
         UpdateGameTimer();
-#if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.L) && Time.timeScale > 0)
-        {
-            Time.timeScale = 2;
-        }
-        if (Input.GetKeyUp(KeyCode.L) && Time.timeScale > 0)
-        {
-            Time.timeScale = 1;
-        }
-#endif
     }
 
     // プレハブからTextDamageControllerで作ったコントローラの関数を呼び出す
