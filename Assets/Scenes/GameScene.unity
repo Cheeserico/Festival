@@ -4595,7 +4595,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 55.80002}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249328142
 MonoBehaviour:
@@ -4808,7 +4808,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 10.94}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276943523
 MonoBehaviour:
@@ -11949,7 +11949,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 8.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664970278
 MonoBehaviour:
@@ -14067,7 +14067,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 10.94}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676524708
 MonoBehaviour:
@@ -16550,7 +16550,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 55.80002}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879772675
 MonoBehaviour:
@@ -19582,7 +19582,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 8.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270412551
 MonoBehaviour:
@@ -20525,7 +20525,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 104.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492064481
 MonoBehaviour:
@@ -20794,7 +20794,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 104.100006}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678593496
 MonoBehaviour:
@@ -20965,7 +20965,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 104.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713297645
 MonoBehaviour:
@@ -21153,7 +21153,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 100, y: 104.100006}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729573247
 MonoBehaviour:
@@ -21248,7 +21248,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 55.80002}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 199.56, y: 75.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754369310
 MonoBehaviour:
@@ -26069,7 +26069,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 55.80002}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 181.2, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040389687
 MonoBehaviour:
@@ -26147,44 +26147,58 @@ MonoBehaviour:
     ElapsedMinutes: 0
     ElapsedSeconds: 0
     spawnType: 0
-    SpawnDuration: 5
+    SpawnDuration: 8
     SpawnCountMax: 10
     EnemyIds: 64000000
-  - Title: 0:02 TaigunBicycle
+  - Title: 1:30 Boy
     ElapsedMinutes: 0
-    ElapsedSeconds: 2
+    ElapsedSeconds: 5
+    spawnType: 0
+    SpawnDuration: 20
+    SpawnCountMax: 60
+    EnemyIds: 69000000
+  - Title: 0:15 GreenRappe
+    ElapsedMinutes: 0
+    ElapsedSeconds: 30
+    spawnType: 0
+    SpawnDuration: 1
+    SpawnCountMax: 7
+    EnemyIds: 68000000
+  - Title: 0:20 Tengu
+    ElapsedMinutes: 0
+    ElapsedSeconds: 20
+    spawnType: 0
+    SpawnDuration: 8
+    SpawnCountMax: 10
+    EnemyIds: 64000000
+  - Title: 1:00 TaigunBicycle
+    ElapsedMinutes: 1
+    ElapsedSeconds: 0
     spawnType: 1
-    SpawnDuration: 4
+    SpawnDuration: 2
     SpawnCountMax: 10
     EnemyIds: c8000000
-  - Title: 0:15 Teng
-    ElapsedMinutes: 0
+  - Title: 1:15 Tengu
+    ElapsedMinutes: 1
     ElapsedSeconds: 15
     spawnType: 0
-    SpawnDuration: 15
-    SpawnCountMax: 30
+    SpawnDuration: 6
+    SpawnCountMax: 10
     EnemyIds: 64000000
-  - Title: 0:30 RedRapper
-    ElapsedMinutes: 0
+  - Title: 1:30 Boy
+    ElapsedMinutes: 1
     ElapsedSeconds: 30
     spawnType: 0
     SpawnDuration: 10
     SpawnCountMax: 30
-    EnemyIds: 6400000065000000
-  - Title: 1:00 BicycleBoy
+    EnemyIds: 69000000
+  - Title: 1:35 Tengu
     ElapsedMinutes: 1
-    ElapsedSeconds: 0
+    ElapsedSeconds: 35
     spawnType: 0
-    SpawnDuration: 10
-    SpawnCountMax: 30
-    EnemyIds: 6500000066000000
-  - Title: 1:00 Boss
-    ElapsedMinutes: 1
-    ElapsedSeconds: 0
-    spawnType: 0
-    SpawnDuration: 1
-    SpawnCountMax: 1
-    EnemyIds: f4010000
+    SpawnDuration: 8
+    SpawnCountMax: 10
+    EnemyIds: 64000000
 --- !u!4 &2087213757
 Transform:
   m_ObjectHideFlags: 0

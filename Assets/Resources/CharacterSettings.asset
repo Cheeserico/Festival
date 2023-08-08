@@ -43,7 +43,7 @@ MonoBehaviour:
     MaxHP: 10
     XP: 0.1
     MaxXP: 0.5
-    MoveSpeed: 0.9
+    MoveSpeed: 1
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 7767348929684751439, guid: bf3ad6eae9e665a4a8c40de1782fe14b, type: 3}
@@ -77,7 +77,7 @@ MonoBehaviour:
     Description: "\t\t"
     Attack: 15
     Defense: 0
-    HP: 29
+    HP: 10
     MaxHP: 10
     XP: 0.5
     MaxXP: 1
@@ -113,13 +113,13 @@ MonoBehaviour:
     Lv: 0
     Name: Shishima
     Description: "\t\t"
-    Attack: 15
+    Attack: 10
     Defense: 0
-    HP: 29
-    MaxHP: 10
+    HP: 5
+    MaxHP: 5
     XP: 0.5
     MaxXP: 1
-    MoveSpeed: 0.3
+    MoveSpeed: 2.5
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 362883302689402487, guid: 8c26a010015976443869f161b7111c1e, type: 3}
@@ -132,34 +132,34 @@ MonoBehaviour:
     Lv: 0
     Name: TuppariBoy
     Description: "\t\t"
-    Attack: 15
+    Attack: 5
     Defense: 0
-    HP: 29
-    MaxHP: 10
+    HP: 50
+    MaxHP: 50
     XP: 0.5
     MaxXP: 1
     MoveSpeed: 0.3
     PickUpRange: 0
-    AliveTime: 0
+    AliveTime: 30
     Prefab: {fileID: 1571002378278599830, guid: 9862ef5acb37f7a4980ac7ce0f4533b7, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
     UsableWeponMax: 0
-    MoveType: 1
+    MoveType: 0
   - Title: TaigunBicycle
     Id: 200
     Lv: 1
     Name: TaigunBicycle
     Description: "\t\t"
-    Attack: 15
+    Attack: 10
     Defense: 0
-    HP: 3
-    MaxHP: 10
+    HP: 1
+    MaxHP: 1
     XP: 0.1
     MaxXP: 0.5
-    MoveSpeed: 5
+    MoveSpeed: 10
     PickUpRange: 0
-    AliveTime: 15
+    AliveTime: 10
     Prefab: {fileID: 554153803005408980, guid: 5069a99c9bb110a4da2439492a386e73, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
