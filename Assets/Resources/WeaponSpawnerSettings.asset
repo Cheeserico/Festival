@@ -16,7 +16,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 1
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B"
     Attack: 15
     Defense: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 2
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 3
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 4
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 5
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   - Title: "\u308A\u3093\u3054\u98F4"
     Id: 0
     Lv: 6
-    Name: 
+    Name: "\u308A\u3093\u3054\u98F4"
     Description: "\u56DE\u5FA9+10"
     Attack: 15
     Defense: 0
