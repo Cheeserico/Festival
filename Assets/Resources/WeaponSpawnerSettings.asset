@@ -37,7 +37,7 @@ MonoBehaviour:
     Id: 0
     Lv: 2
     Name: 
-    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B"
+    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
     HP: -1
@@ -57,7 +57,7 @@ MonoBehaviour:
     Id: 0
     Lv: 3
     Name: 
-    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B"
+    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
     HP: -1
@@ -77,7 +77,7 @@ MonoBehaviour:
     Id: 0
     Lv: 4
     Name: 
-    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B"
+    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
     HP: -1
@@ -97,27 +97,7 @@ MonoBehaviour:
     Id: 0
     Lv: 5
     Name: 
-    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B"
-    Attack: 15
-    Defense: 0
-    HP: -1
-    MaxHP: 0
-    XP: 0
-    MaxXP: 0
-    MoveSpeed: 0
-    PickUpRange: 0
-    AliveTime: 0.5
-    PrefabSpawner: {fileID: 732586464960538030, guid: 0cd70b9d094ee1a4abcc9b33531ad304, type: 3}
-    Icon: {fileID: 21300000, guid: 27d01e3cbedc748cf932a2feda1bd4c2, type: 3}
-    LevelUpItemId: 1
-    SpawnCount: 2
-    SpawnTimerMin: 0.5
-    SpawnTimerMax: 0.5
-  - Title: "\u308A\u3093\u3054\u98F4"
-    Id: 0
-    Lv: 6
-    Name: 
-    Description: "\u56DE\u5FA9+10"
+    Description: "\u5DE6\u53F3\u306B\u653B\u6483\u3059\u308B\n\u653B\u6483\u983B\u5EA6UP"
     Attack: 15
     Defense: 0
     HP: -1

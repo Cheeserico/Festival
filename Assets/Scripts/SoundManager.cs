@@ -39,6 +39,20 @@ public class SoundManager : MonoBehaviour
     {
         audioSourceSE.PlayOneShot(audioClipSE[(int)se]);
     }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow))
+        {
+            audioSourceBGM.volume -= 0.001f;
+            audioSourceSE.volume -= 0.001f;
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
+        {
+            audioSourceBGM.volume += 0.001f;
+            audioSourceSE.volume += 0.001f;
+        }
+    }
 }
 
 

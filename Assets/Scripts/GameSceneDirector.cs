@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using unityroom.Api;
 
 public class GameSceneDirector : MonoBehaviour
 {
@@ -112,6 +113,7 @@ public class GameSceneDirector : MonoBehaviour
         isGameOver = true;
         Time.timeScale = 0;
         resultPanel.Show(Player, this);
+        UnityroomApiClient.Instance.SendScore(1, Player.sumXp, ScoreboardWriteMode.HighScoreDesc);
     }
 
     public void ShowLevelUpPanel()
@@ -155,6 +157,7 @@ public class GameSceneDirector : MonoBehaviour
         OldSeconds = seconds;
         if (GameTimer >= 3*60)
         {
+
             GameTimer = 3*60;
             textTimer.text = Units.GetTextTimer(GameTimer);
             clearPanel.Show(Player, this);
@@ -162,6 +165,8 @@ public class GameSceneDirector : MonoBehaviour
             Time.timeScale = 0;
             SoundManager.Instance.StopBGM();
             SoundManager.Instance.PlaySE(SE.GameClear);
+            UnityroomApiClient.Instance.SendScore(1, Player.sumXp, ScoreboardWriteMode.HighScoreDesc);
+
         }
     }
 
