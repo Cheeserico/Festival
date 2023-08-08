@@ -113,13 +113,13 @@ MonoBehaviour:
     Lv: 0
     Name: Shishima
     Description: "\t\t"
-    Attack: 10
+    Attack: 5
     Defense: 0
     HP: 5
     MaxHP: 5
     XP: 0.5
     MaxXP: 1
-    MoveSpeed: 2.5
+    MoveSpeed: 3
     PickUpRange: 0
     AliveTime: 0
     Prefab: {fileID: 362883302689402487, guid: 8c26a010015976443869f161b7111c1e, type: 3}
@@ -132,15 +132,15 @@ MonoBehaviour:
     Lv: 0
     Name: TuppariBoy
     Description: "\t\t"
-    Attack: 5
+    Attack: 10
     Defense: 0
-    HP: 50
-    MaxHP: 50
+    HP: 400
+    MaxHP: 400
     XP: 0.5
     MaxXP: 1
     MoveSpeed: 0.3
     PickUpRange: 0
-    AliveTime: 30
+    AliveTime: 35
     Prefab: {fileID: 1571002378278599830, guid: 9862ef5acb37f7a4980ac7ce0f4533b7, type: 3}
     DefaultWeaponIds: 
     UsableWeponIds: 
@@ -191,11 +191,11 @@ MonoBehaviour:
     Description: "\t\t"
     Attack: 50
     Defense: 0
-    HP: 5000
+    HP: 400
     MaxHP: 0
     XP: 20
     MaxXP: 30
-    MoveSpeed: 0.6
+    MoveSpeed: 1
     PickUpRange: 0
     AliveTime: -1
     Prefab: {fileID: 5445445748322493964, guid: b6cc3cca5cf567c458471b28008f751e, type: 3}
