@@ -39,8 +39,8 @@ public class YoyoSpawnerController : BaseWeaponSpawner
 
 
             ctrl.Target = target;
-
-
         }
+        SoundManager.Instance.PlaySE(SE.WindWeapon);
+
     }
 }

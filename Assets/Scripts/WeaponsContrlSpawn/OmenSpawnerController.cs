@@ -44,6 +44,7 @@ public class OmenSpawnerController : BaseWeaponSpawner
         }
 
 
+        SoundManager.Instance.PlaySE(SE.WindWeapon);
 
     }
 }

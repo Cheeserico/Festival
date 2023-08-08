@@ -44,6 +44,8 @@ public class GameSceneDirector : MonoBehaviour
     // レベルアップ
     [SerializeField] LevelUpPanel levelUPPanel;
     [SerializeField] ResultPanel resultPanel;
+    [SerializeField] ResultPanel clearPanel;
+    bool isGameOver;
 
     private void Start()
     {
@@ -98,7 +100,6 @@ public class GameSceneDirector : MonoBehaviour
 
         SoundManager.Instance.PlayBGM();
     }
-    bool isGameOver;
 
     void OnGameOver()
     {
@@ -106,6 +107,8 @@ public class GameSceneDirector : MonoBehaviour
         {
             return;
         }
+        SoundManager.Instance.PlaySE(SE.GameOver);
+        SoundManager.Instance.StopBGM();
         isGameOver = true;
         Time.timeScale = 0;
         resultPanel.Show(Player, this);
@@ -135,6 +138,10 @@ public class GameSceneDirector : MonoBehaviour
     //　ゲームタイマー
     void UpdateGameTimer()
     {
+        if (isGameOver)
+        {
+            return;
+        }
         GameTimer += Time.deltaTime;
 
         // 前回と秒数が同じなら処理をしない
@@ -146,6 +153,16 @@ public class GameSceneDirector : MonoBehaviour
         // 前と時間が違ったから表示しよう（時間が進む）
         textTimer.text = Units.GetTextTimer(GameTimer);
         OldSeconds = seconds;
+        if (GameTimer >= 3*60)
+        {
+            GameTimer = 3*60;
+            textTimer.text = Units.GetTextTimer(GameTimer);
+            clearPanel.Show(Player, this);
+            isGameOver = true;
+            Time.timeScale = 0;
+            SoundManager.Instance.StopBGM();
+            SoundManager.Instance.PlaySE(SE.GameClear);
+        }
     }
 
     public void OnRetryButton()

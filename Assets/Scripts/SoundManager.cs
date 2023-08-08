@@ -31,6 +31,10 @@ public class SoundManager : MonoBehaviour
         audioSourceBGM.clip = audioClipBGM[0];
         audioSourceBGM.Play();
     }
+    public void StopBGM()
+    {
+        audioSourceBGM.Stop();
+    }
     public void PlaySE(SE se)
     {
         audioSourceSE.PlayOneShot(audioClipSE[(int)se]);

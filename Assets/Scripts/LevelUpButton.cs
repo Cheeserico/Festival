@@ -26,5 +26,6 @@ public class LevelUpButton : MonoBehaviour
     public void OnSelectWeapon()
     {
         OnSelect?.Invoke(weaponSpawnerStats);
+        SoundManager.Instance.PlaySE(SE.Button);
     }
 }

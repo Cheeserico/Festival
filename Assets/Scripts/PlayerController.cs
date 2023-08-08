@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     // 攻撃のクールダウン
     float attackCoolDownTimer;
     float attackCoolDownTimerMax = 0.5f;
+    public int sumXp;
 
 
     // 必要XP
@@ -273,6 +274,7 @@ public class PlayerController : MonoBehaviour
 
         if (0 > Stats.HP) Stats.HP = 0;
         setSliderHP();
+        SoundManager.Instance.PlaySE(SE.Damage);
     }
 
     // HPスライダーの値を更新
@@ -324,6 +326,8 @@ public class PlayerController : MonoBehaviour
         setSliderHP();
 
         setSliderXP();
+        SoundManager.Instance.PlaySE(SE.Xp);
+        sumXp += 1;
     }
 
     // プレイヤーへ攻撃する

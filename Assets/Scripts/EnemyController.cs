@@ -188,8 +188,9 @@ public class EnemyController : MonoBehaviour
         if(0>Stats.HP)
         {
             setDead();
-
         }
+        SoundManager.Instance.PlaySE(SE.DonWeapon);
+
         // 計算後のダメージを返す
         return damage;
     }

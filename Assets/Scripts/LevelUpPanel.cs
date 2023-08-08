@@ -40,6 +40,7 @@ public class LevelUpPanel : MonoBehaviour
                 levelUpButton.SetWeapon(weapon);
             }
         }
+        SoundManager.Instance.PlaySE(SE.LvUp);
     }
 
     void OnSelectWeapon(WeaponSpawnerStats weaponSpawnerStats)

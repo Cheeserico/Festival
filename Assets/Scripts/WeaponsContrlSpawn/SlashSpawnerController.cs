@@ -47,6 +47,9 @@ public class SlashSpawnerController : BaseWeaponSpawner
             spawnTimer = stats.GetRandomSpawnTimer();
             onceSpawnCount = (int)stats.SpawnCount;
         }
+
+        SoundManager.Instance.PlaySE(SE.WindWeapon);
+
     }
 
     public override void LevelUp()
